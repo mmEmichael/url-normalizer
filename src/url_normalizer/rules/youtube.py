@@ -1,9 +1,9 @@
-from urllib.parse import parse_qs, urlsplit, urlunsplit
+from urllib.parse import SplitResult, parse_qs, urlsplit, urlunsplit
 
 from url_normalizer.errors import InvalidURLError
 
 
-def _parse(url: str):
+def _parse(url: str) -> SplitResult:
     try:
         return urlsplit(url)
     except ValueError as exc:
@@ -23,7 +23,7 @@ def normalize_youtube(url: str) -> str:
     return new_url
 
 
-def extract_youtube_id(url):
+def extract_youtube_id(url: str) -> str | None:
     parsed_url = _parse(url)
     path = parsed_url.path
     query = parsed_url.query

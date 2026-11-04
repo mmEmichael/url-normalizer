@@ -1,16 +1,16 @@
-from urllib.parse import urlsplit, urlunsplit
+from urllib.parse import SplitResult, urlsplit, urlunsplit
 
 from url_normalizer.errors import InvalidURLError
 
 
-def _parse(url: str):
+def _parse(url: str) -> SplitResult:
     try:
         return urlsplit(url)
     except ValueError as exc:
         raise InvalidURLError(f"Malformed URL: {url!r}") from exc
 
 
-def _split_path(path: str) -> list:
+def _split_path(path: str) -> list[str]:
     return [part for part in path.split("/") if part]
 
 
@@ -36,7 +36,7 @@ def normalize_reddit(url: str) -> str:
     return new_url
 
 
-def extract_reddit_id(url: str):
+def extract_reddit_id(url: str) -> str | None:
     parsed_url = _parse(url)
     path = parsed_url.path
 

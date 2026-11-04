@@ -1,5 +1,12 @@
 import re
-from urllib.parse import parse_qsl, urldefrag, urlencode, urlsplit, urlunsplit
+from urllib.parse import (
+    SplitResult,
+    parse_qsl,
+    urldefrag,
+    urlencode,
+    urlsplit,
+    urlunsplit,
+)
 
 from url_normalizer.errors import InvalidURLError
 
@@ -23,7 +30,7 @@ def _check_url_is_not_empty(url: str) -> None:
         raise InvalidURLError("URL is empty")
 
 
-def _parse(url: str):
+def _parse(url: str) -> SplitResult:
     try:
         return urlsplit(url)
     except ValueError as exc:
