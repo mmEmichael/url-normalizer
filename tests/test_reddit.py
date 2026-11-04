@@ -41,6 +41,11 @@ from url_normalizer.normalizer import extract_id, normalize
             "https://redd.it/xyz",
             "https://redd.it/xyz",
         ),
+        # url без id
+        (
+            "https://reddit.com/r/python",
+            "https://www.reddit.com/r/python",
+        ),
     ],
 )
 def test_normalize_reddit_urls(url, expected):

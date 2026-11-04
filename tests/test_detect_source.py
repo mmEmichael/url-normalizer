@@ -1,5 +1,6 @@
 import pytest
 
+from url_normalizer.errors import InvalidURLError
 from url_normalizer.sources import Source, detect_source
 
 
@@ -48,3 +49,8 @@ from url_normalizer.sources import Source, detect_source
 )
 def test_detect_source(url, expected):
     assert detect_source(url) == expected
+
+
+def test_normalize_empty_url():
+    with pytest.raises(InvalidURLError, match="URL has no host"):
+        detect_source("https://user@")

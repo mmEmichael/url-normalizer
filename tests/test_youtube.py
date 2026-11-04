@@ -71,6 +71,11 @@ from url_normalizer.normalizer import extract_id, normalize
             "https://www.youtube.com/playlist?list=playlist123",
             "https://www.youtube.com/playlist?list=playlist123",
         ),
+        # url без id
+        (
+            "https://youtube.com/",
+            "https://www.youtube.com/",
+        ),
     ],
 )
 def test_normalize_youtube_urls(url, expected):

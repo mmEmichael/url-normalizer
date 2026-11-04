@@ -21,3 +21,5 @@ def extract_id(url: str) -> str | None:
         return extract_youtube_id(url)
     if detect_source(url) == Source.REDDIT:
         return extract_reddit_id(url)
+
+    return None

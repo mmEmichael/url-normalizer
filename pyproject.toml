@@ -3,9 +3,7 @@ name = "url-normalizer"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-authors = [
-    { name = "mmEmichael", email = "mm.e.mihon@gmail.com" }
-]
+authors = [{ name = "mmEmichael", email = "mm.e.mihon@gmail.com" }]
 requires-python = ">=3.14"
 dependencies = []
 
@@ -14,6 +12,15 @@ requires = ["uv_build>=0.12.24,<0.13.0"]
 build-backend = "uv_build"
 
 [dependency-groups]
-dev = [
-    "pytest>=9.2.0",
-]
+dev = ["pytest>=9.2.0", "pytest-cov>=7.1.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["url_normalizer"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 95
