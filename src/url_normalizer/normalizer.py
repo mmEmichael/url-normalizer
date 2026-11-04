@@ -1,7 +1,7 @@
-from src.url_normalizer.rules.common import apply_common_rules, validate_url
-from src.url_normalizer.sources import Source, detect_source
+from url_normalizer.rules.common import apply_common_rules, validate_url
 from url_normalizer.rules.reddit import extract_reddit_id, normalize_reddit
 from url_normalizer.rules.youtube import extract_youtube_id, normalize_youtube
+from url_normalizer.sources import Source, detect_source
 
 
 def normalize(url: str) -> str:

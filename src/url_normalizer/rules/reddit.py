@@ -1,6 +1,6 @@
 from urllib.parse import urlsplit, urlunsplit
 
-from src.url_normalizer.errors import InvalidURLError
+from url_normalizer.errors import InvalidURLError
 
 
 def _parse(url: str):

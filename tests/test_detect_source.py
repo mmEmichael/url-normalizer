@@ -1,6 +1,6 @@
 import pytest
 
-from src.url_normalizer.sources import Source, detect_source
+from url_normalizer.sources import Source, detect_source
 
 
 @pytest.mark.parametrize(

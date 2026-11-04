@@ -1,7 +1,7 @@
 import pytest
 
-from src.url_normalizer.errors import InvalidURLError
-from src.url_normalizer.normalizer import normalize
+from url_normalizer.errors import InvalidURLError
+from url_normalizer.normalizer import normalize
 
 
 @pytest.mark.parametrize(

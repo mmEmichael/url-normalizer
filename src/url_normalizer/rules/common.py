@@ -1,7 +1,7 @@
 import re
 from urllib.parse import parse_qsl, urldefrag, urlencode, urlsplit, urlunsplit
 
-from src.url_normalizer.errors import InvalidURLError
+from url_normalizer.errors import InvalidURLError
 
 # ===== Validate =====
 _DOMAIN_RE = re.compile(

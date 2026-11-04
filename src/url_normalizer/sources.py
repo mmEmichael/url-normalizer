@@ -1,7 +1,7 @@
 from enum import StrEnum, auto
 from urllib.parse import urlsplit
 
-from src.url_normalizer.errors import InvalidURLError
+from url_normalizer.errors import InvalidURLError
 
 
 class Source(StrEnum):

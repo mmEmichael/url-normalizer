@@ -1,6 +1,6 @@
 import pytest
 
-from src.url_normalizer.normalizer import normalize
+from url_normalizer.normalizer import normalize
 
 
 @pytest.mark.parametrize(
