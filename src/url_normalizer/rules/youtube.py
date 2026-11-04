@@ -13,11 +13,12 @@ def _parse(url: str):
 def normalize_youtube(url: str) -> str:
     parsed_url = _parse(url)
 
-    if extract_youtube_id(url) is None:
+    id = extract_youtube_id(url)
+
+    if id is None:
         new_parsed_url = parsed_url._replace(scheme="https", netloc="www.youtube.com")
         return urlunsplit(new_parsed_url)
 
-    id = extract_youtube_id(url)
     new_url = f"https://www.youtube.com/watch?v={id}"
     return new_url
 
