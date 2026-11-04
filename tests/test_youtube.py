@@ -1,6 +1,6 @@
 import pytest
 
-from src.url_normalizer.rules.youtube import extract_id
+from src.url_normalizer.normalizer import extract_id
 from url_normalizer.normalizer import normalize
 
 
