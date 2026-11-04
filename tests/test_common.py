@@ -1,6 +1,7 @@
 import pytest
 
-from src.url_normalizer.normalizer import normalize
+from url_normalizer.errors import InvalidURLError
+from url_normalizer.normalizer import normalize
 
 
 @pytest.mark.parametrize(
@@ -98,3 +99,8 @@ from src.url_normalizer.normalizer import normalize
 )
 def test_normalize_common_rules(url, expected):
     assert normalize(url) == expected
+
+
+def test_normalize_empty_url():
+    with pytest.raises(InvalidURLError, match="URL is empty"):
+        normalize("")

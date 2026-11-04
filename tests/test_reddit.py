@@ -1,7 +1,6 @@
 import pytest
 
-from src.url_normalizer.rules.reddit import extract_id
-from url_normalizer.normalizer import normalize
+from url_normalizer.normalizer import extract_id, normalize
 
 
 @pytest.mark.parametrize(
@@ -41,6 +40,11 @@ from url_normalizer.normalizer import normalize
         (
             "https://redd.it/xyz",
             "https://redd.it/xyz",
+        ),
+        # url без id
+        (
+            "https://reddit.com/r/python",
+            "https://www.reddit.com/r/python",
         ),
     ],
 )

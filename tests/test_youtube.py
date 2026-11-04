@@ -1,7 +1,6 @@
 import pytest
 
-from src.url_normalizer.rules.youtube import extract_id
-from url_normalizer.normalizer import normalize
+from url_normalizer.normalizer import extract_id, normalize
 
 
 @pytest.mark.parametrize(
@@ -71,6 +70,11 @@ from url_normalizer.normalizer import normalize
         (
             "https://www.youtube.com/playlist?list=playlist123",
             "https://www.youtube.com/playlist?list=playlist123",
+        ),
+        # url без id
+        (
+            "https://youtube.com/",
+            "https://www.youtube.com/",
         ),
     ],
 )
